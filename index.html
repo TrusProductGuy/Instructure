@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andy Trus — Director of Product, Assessments | Instructure</title>
+<style>
+  /* ── CONFIG ─────────────────────────────────────────── */
+  :root {
+    --inst-blue:     #0073A8;
+    --inst-blue-dk:  #00527A;
+    --inst-teal:     #00A9C0;
+    --inst-teal-lt:  #E3F7FA;
+    --charcoal:      #1A2332;
+    --body-text:     #2E3D4F;
+    --muted:         #5C6E82;
+    --bg:            #F7F9FC;
+    --card-bg:       #FFFFFF;
+    --rule:          #D4DDE8;
+    --hero-bg:       #0A1929;
+    --stat-bar-bg:   #0D2137;
+    --font:          -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius:        10px;
+    --shadow:        0 2px 16px rgba(0,115,168,0.09);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--body-text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ─────────────────────────────────────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,25,41,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0,169,192,0.25);
+    padding: 0 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #fff;
+  }
+  .nav-logo span { color: var(--inst-teal); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: rgba(255,255,255,0.65);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--inst-teal); }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  .hero {
+    background: var(--hero-bg);
+    padding: 88px 32px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(0,169,192,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 10% 80%, rgba(0,115,168,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 960px; margin: 0 auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--inst-teal);
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 24px; height: 2px; background: var(--inst-teal);
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 800; line-height: 1.12;
+    color: #ffffff; letter-spacing: -0.02em;
+    margin-bottom: 22px; max-width: 740px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--inst-teal), #5DD8EA);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 17px; color: rgba(255,255,255,0.68);
+    max-width: 580px; line-height: 1.7; margin-bottom: 36px;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--inst-teal); color: #fff;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 13px 28px;
+    border-radius: 4px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: #00BDD6; transform: translateY(-1px); }
+
+  /* ── DOMAIN PILLAR BAR (signature element) ──────────────── */
+  .pillar-bar {
+    background: var(--stat-bar-bg);
+    border-top: 1px solid rgba(0,169,192,0.2);
+    border-bottom: 1px solid rgba(0,169,192,0.2);
+    padding: 0;
+  }
+  .pillar-inner {
+    max-width: 960px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+  }
+  .pillar {
+    padding: 28px 32px;
+    border-right: 1px solid rgba(255,255,255,0.07);
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .pillar:last-child { border-right: none; }
+  .pillar-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    border-radius: 8px;
+    background: rgba(0,169,192,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .pillar-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--inst-teal);
+    margin-bottom: 4px;
+  }
+  .pillar-stat {
+    font-size: 26px; font-weight: 800; color: #fff;
+    line-height: 1; margin-bottom: 4px;
+  }
+  .pillar-desc { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+  /* ── SECTIONS ─────────────────────────────────────────── */
+  section {
+    padding: 72px 32px;
+  }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--inst-teal);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 800; color: var(--charcoal);
+    letter-spacing: -0.02em; line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-lead {
+    font-size: 16px; color: var(--muted);
+    max-width: 620px; line-height: 1.75; margin-bottom: 48px;
+  }
+
+  /* ── WHY INSTRUCTURE ──────────────────────────────────── */
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .why-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .why-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(0,115,168,0.13);
+  }
+  .why-card-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--inst-blue); background: rgba(0,115,168,0.08);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .why-card h3 {
+    font-size: 16px; font-weight: 700; color: var(--charcoal);
+    margin-bottom: 10px; line-height: 1.35;
+  }
+  .why-card p {
+    font-size: 14px; color: var(--muted); line-height: 1.7;
+  }
+
+  /* ── CAPABILITIES ─────────────────────────────────────── */
+  .caps-section { background: var(--card-bg); }
+  .caps-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .cap-card {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    background: var(--bg);
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cap-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,115,168,0.1);
+  }
+  .cap-card::after {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--inst-blue), var(--inst-teal));
+  }
+  .cap-icon {
+    font-size: 26px; margin-bottom: 14px; display: block;
+  }
+  .cap-card h3 {
+    font-size: 15px; font-weight: 700; color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+  .cap-card p {
+    font-size: 13px; color: var(--muted); line-height: 1.7;
+  }
+  .cap-proof {
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px; color: var(--inst-blue); font-weight: 600;
+  }
+
+  /* ── AI SECTION ───────────────────────────────────────── */
+  .ai-section {
+    background: linear-gradient(135deg, var(--hero-bg) 0%, #0D2137 100%);
+    color: #fff;
+  }
+  .ai-section .section-title { color: #fff; }
+  .ai-section .section-lead { color: rgba(255,255,255,0.65); }
+  .ai-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .ai-card {
+    border: 1px solid rgba(0,169,192,0.25);
+    border-radius: var(--radius);
+    padding: 28px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+  }
+  .ai-card h3 {
+    font-size: 15px; font-weight: 700; color: #fff;
+    margin-bottom: 10px;
+  }
+  .ai-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+  .ai-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--inst-teal); background: rgba(0,169,192,0.12);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 12px;
+  }
+
+  /* ── Q&A ──────────────────────────────────────────────── */
+  .qa-list { display: flex; flex-direction: column; gap: 16px; }
+  .qa-item {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .qa-q {
+    padding: 20px 24px;
+    font-size: 15px; font-weight: 700; color: var(--charcoal);
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; user-select: none;
+    transition: background 0.15s;
+  }
+  .qa-q:hover { background: rgba(0,115,168,0.04); }
+  .qa-q .arrow {
+    font-size: 18px; color: var(--inst-blue);
+    transition: transform 0.25s;
+    flex-shrink: 0; margin-left: 16px;
+  }
+  .qa-a {
+    display: none;
+    padding: 0 24px 22px;
+    font-size: 14px; color: var(--muted);
+    line-height: 1.75;
+    border-top: 1px solid var(--rule);
+  }
+  .qa-a.open { display: block; }
+  .qa-q.open .arrow { transform: rotate(180deg); }
+  .qa-a strong { color: var(--charcoal); }
+
+  /* ── FOOTER ───────────────────────────────────────────── */
+  footer {
+    background: var(--hero-bg);
+    padding: 40px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(0,169,192,0.2);
+  }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+  footer a { color: var(--inst-teal); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ── RESPONSIVE ───────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .why-grid, .caps-grid, .ai-grid { grid-template-columns: 1fr; }
+    .pillar-inner { grid-template-columns: 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .pillar:last-child { border-bottom: none; }
+    nav { padding: 0 16px; }
+    .nav-links { gap: 16px; }
+    section { padding: 56px 20px; }
+    .hero { padding: 64px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Andy Trus <span>× Instructure</span></div>
+  <div class="nav-links">
+    <a href="#why">Why Instructure</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#ai">AI</a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Director of Product Management, Assessments</div>
+    <h1>Assessment strategy<br>at the scale <em>Instructure needs.</em></h1>
+    <p class="hero-sub">
+      13 years building, growing, and modernizing EdTech platforms — including leading a $100M+ assessment and learning product used by 1 million students. I understand what it takes to drive retention, grow ARR, and earn trust from institutions that have built their workflows around your product.
+    </p>
+    <a href="#why" class="hero-cta">See the fit →</a>
+  </div>
+</section>
+
+<!-- ── PILLAR BAR ─────────────────────────────────────────────── -->
+<div class="pillar-bar">
+  <div class="pillar-inner">
+    <div class="pillar">
+      <div class="pillar-icon">📊</div>
+      <div>
+        <div class="pillar-label">Product Scale</div>
+        <div class="pillar-stat">$100M+</div>
+        <div class="pillar-desc">Annual revenue owned as Product Director, WebAssign</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🏫</div>
+      <div>
+        <div class="pillar-label">Both Markets Led</div>
+        <div class="pillar-stat">K–12 + HE</div>
+        <div class="pillar-desc">Assessment and learning products for districts and 1M+ higher ed students</div>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🤖</div>
+      <div>
+        <div class="pillar-label">AI Outcomes</div>
+        <div class="pillar-stat">$2.75M</div>
+        <div class="pillar-desc">Saved via AI-powered assessment content review tool</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHY INSTRUCTURE ───────────────────────────────────────── -->
+<section id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow">Why Instructure</div>
+    <h2 class="section-title">This role fits my trajectory — not just my résumé.</h2>
+    <p class="section-lead">Instructure is solving the exact challenges I've spent 13 years working on: assessment at institutional scale, platform modernization without disrupting entrenched workflows, and AI that actually changes outcomes for educators and students.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-card-tag">Domain Depth</span>
+        <h3>Assessments are my domain, not a new chapter</h3>
+        <p>From WebAssign's assessment and learning platform to McGraw Hill's K–12 digital assessments, I've spent the majority of my career building products where accuracy, reliability, and instructor trust are non-negotiable. I know the workflows institutions depend on and the stakes of getting them wrong.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-tag">Platform Modernization</span>
+        <h3>I've led the change management nobody wants to do</h3>
+        <p>At WebAssign, I drove the consolidation of a $15M+ Chemistry offering into a unified platform — migrating institutions that had built years of workflows around a legacy product. The change management required to do that without churn is exactly what Instructure's Assessment domain needs at scale.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-tag">K–12 + Higher Ed</span>
+        <h3>Both markets, not just one</h3>
+        <p>Instructure serves K–12 districts and universities with different buying patterns, stakeholder maps, and product expectations. I've shipped for both. My McGraw Hill work targets K–12 classroom assessments; WebAssign served 1M+ higher ed students. I don't need a learning curve on either segment.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card-tag">Growth Strategy</span>
+        <h3>I build strategy that earns investment</h3>
+        <p>As Product Director, I owned the vision, roadmap, and go-to-market for WebAssign end-to-end — not just execution. I've built business cases for platform investments, presented to executive stakeholders, and delivered the revenue results that justified the bets. That's the cadence this role requires.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAPABILITIES ──────────────────────────────────────────── -->
+<section id="capabilities" class="caps-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Core Capabilities</div>
+    <h2 class="section-title">What I bring to the Assessments domain</h2>
+    <p class="section-lead">Six capabilities mapped directly to what this role demands — each backed by specific outcomes, not descriptions.</p>
+    <div class="caps-grid">
+      <div class="cap-card">
+        <span class="cap-icon">🎯</span>
+        <h3>Product Line Ownership</h3>
+        <p>Full P&L accountability for a $100M+ platform. Owned vision, strategy, roadmap, and go-to-market from ideation through retention metrics.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🔄</span>
+        <h3>Retention-First Thinking</h3>
+        <p>Consistently diagnosed and addressed churn drivers before they compounded. Surpassed retention forecasts while improving CSAT across a deeply embedded customer base.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">📐</span>
+        <h3>PM Team Development</h3>
+        <p>Led teams of PMs and product owners. Both APMs I mentored were promoted within 1–2 years. I develop product managers, not just manage them — and lead by example as an avid consumer of product thinking from Lenny's Newsletter and beyond, and as a manager who has built my own AI-powered operating system for how I run 1:1s, planning, and team rituals.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🗺️</span>
+        <h3>Adjacent Market Expansion</h3>
+        <p>Re-imagined Mastery Learning to enter new customer segments. Built and launched a 0→1 placement assessment product that placed 150K+ students, creating an entirely new revenue line.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🤝</span>
+        <h3>Executive & Cross-Functional Alignment</h3>
+        <p>Regular executive stakeholder communication across product, sales, marketing, and engineering. Built the conviction for investments and delivered progress reporting against plan.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-icon">🔗</span>
+        <h3>LMS Ecosystem Fluency</h3>
+        <p>Built integrations with LMS platforms as a distribution and workflow layer. Understand how institutions embed assessment tools in broader instructional stacks — including Canvas's role as the hub.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AI SECTION ────────────────────────────────────────────── -->
+<section id="ai" class="ai-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">AI in Assessment</div>
+    <h2 class="section-title">Where I see the highest-leverage AI opportunities in Instructure's Assessment domain.</h2>
+    <p class="section-lead">Dan Meyer — one of edtech's sharpest critical voices — places assessment software in a high-impact, low-usage quadrant. Gallup confirms it: only 32% of teachers use AI at all weekly. AI in education does things faster and cheaper, but not yet enough things <em>better</em>. The strategic question for Instructure's Assessment domain isn't whether to build — it's how to move from the low-usage half of that quadrant to the high-usage half, without throwing what Meyer calls "boxes of loose jet ski parts" at already-overwhelmed teachers.</p>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <span class="ai-tag">High Impact → High Usage</span>
+        <h3>Close the gap between assessment data and instructional decision</h3>
+        <p>Mastery Predictive Assessments and Quick Reassess already help teachers act on results — that's real progress. The next frontier is reducing the cognitive distance further: AI that moves from "here are your standards gaps" to "here's a specific instructional sequence for this cohort, this week." That shift — from insight to prescription — is what turns high-impact software into high-usage software. It's also what Meyer's framework says is missing from most edtech AI today.</p>
+      </div>
+      <div class="ai-card">
+        <span class="ai-tag">Delivery Problem</span>
+        <h3>Question authoring works when it reduces teacher burden, not when it adds a review task</h3>
+        <p>Question Authoring Assistance is in Canvas Core. The risk Meyer's critique names precisely: tools that produce output that <em>looks</em> reasonable but still requires significant expert judgment to validate — effectively handing teachers a rough draft with a "your problem now" attached. The product opportunity is quality high enough that teachers spend less time reviewing than they would creating from scratch. Until that threshold is crossed, adoption will stay in "dabbler" territory.</p>
+      </div>
+      <div class="ai-card">
+        <span class="ai-tag">Agency &amp; Governance</span>
+        <h3>AI-assisted grading only scales when teachers stay in control of the decision</h3>
+        <p>Grading assistance is coming to IgniteAI, and the 2026 expert consensus is clear: the institutions that adopt AI confidently are those where teachers retain visible agency over outcomes. Grades affect placement and graduation — the trust model isn't a nice-to-have. Audit trails, calibration controls, and override mechanisms aren't bureaucratic overhead; they're the product features that make the difference between a tool that gets adopted district-wide and one that gets quietly disabled after a parent complaint.</p>
+      </div>
+      <div class="ai-card">
+        <span class="ai-tag">Integrity Architecture</span>
+        <h3>LLM-enabled assignments as authentic assessment — and the integrity answer</h3>
+        <p>Instructure's LLM-enabled assignment embeds a structured AI conversation directly in the learning experience, capturing student reasoning as learning evidence. The strategic upside beyond pedagogy: it's the most credible response to the academic integrity problem. Brookings recently labeled unsanctioned student AI use "the fast food of education" — cheap, ubiquitous, and nutritionally empty. When AI interaction is the assignment — designed by the instructor, happening inside Canvas, with reasoning captured and graded — you replace the integrity arms race with an integrity architecture. That's not just a product feature. It's a category-defining answer to the most urgent question in higher ed right now, and a story worth leading every sales conversation with.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <p>Andy Trus &nbsp;|&nbsp; <a href="mailto:trus.productguy@gmail.com">trus.productguy@gmail.com</a> &nbsp;|&nbsp; 301-461-6166 &nbsp;|&nbsp; <a href="https://linkedin.com/in/andy-trus" target="_blank">linkedin.com/in/andy-trus</a></p>
+  <p style="margin-top:8px; font-size:11px; color:rgba(255,255,255,0.25);">Prepared for Instructure — Director of Product Management, Assessments</p>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
